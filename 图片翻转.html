@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>翻转</title>
+    <style>
+        html, body {
+            margin:0;
+            padding: 0;
+        }
+        
+        body {
+            text-align: center;
+        }
+
+        .container .img-swap {
+            display: inline-block;
+            width: 250px;
+            height: 350px;
+            position: relative;
+        }
+        
+        .container .img-swap img {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            
+            -webkit-transition: all ease-out 1.5s;
+            -moz-transition: all ease-out 1.5s;
+            -ms-transition: all ease-out 1.5s;
+            -o-transition: all ease-out 1.5s;
+            transition: all ease-out 1.5s;
+
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        
+        .container .img-swap .first {
+            z-index: 2;
+        }
+        
+        .container .img-swap .second {
+            z-index: 1;
+            -webkit-transform: rotateY(-180deg);
+            -moz-transform: rotateY(-180deg);
+            -ms-transform: rotateY(-180deg);
+            -o-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+        }
+        
+        .container:hover .img-swap .first {
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+        
+        .container:hover .img-swap .second {
+            -webkit-transform: rotateY(0deg);
+            -moz-transform: rotateY(0deg);
+            -ms-transform: rotateY(0deg);
+            -o-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="img-swap">
+            <img class="first" src="../小怪物/正面.jpg" alt=""/>
+            <img class="second" src="../小怪物/反面.jpg" alt=""/>
+        </div>
+    </div>
+</body>
+</html>
